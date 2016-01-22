@@ -9,42 +9,6 @@ By: scruff3y, December 2015
 User types in number. Number is then displayed converted to a variety
 of different units.
 
-Goals																																					Checkbox:
-1. Zeroth-order Quantities (distance, mass, temp, time)
-Convert distance to various other units.																e.g metres to feet, or feet/inches.						[]
-Recognise and convert mass.																				e.g kilo to lb											[]
-Recognise and convert temperature.																		e.g C to K, F											[]
-Recognise and convert time.																				e.g seconds to seconds/minutes, hours/minutes			[]
-Recognise orders-of-magnitude.																			e.g 1000g and 1kg should both work.						[]
-Recognise non-standard units.																			e.g energy (ML^2/T^2), Newton (ML/T^2),					[]
-Allow lexing of parentheses, for precise unit definition.												e.g k(m^2) VS (km)^2.									[]
-
-2. Higher-order Quantities (rates of change)
-Recognise and convert exponentiated properties.															e.g ft^2 to m^2											[]
-Convert rates per time to units/second.																	e.g ft/s to m/s, k/h, M/h								[]
-Convert rates per *thing* to units/thing. (An abstraction of the above).								e.g ft/kg to m/kg										[]
-Add option to keep either top unit, bottom unit or neither (defaults to SI).							e.g Choose between m/kg to ft/kg... OR m/kg to m/lb...	[]
-
-3. User Interface/Computer-Related stuff
-Ensure that internal variables are of a type large enough to minimise floating-point rounding/overflow errors.													[]
-Decide most apropriate conversion to make. (?) Pure SI units in Scientific Notation, Most-Readable SI,															[]
-	Most-Readable Imperial, one 'extreme', e.g Planc Lengths or Lightyears (chosen psuedo-randomly).															--
-Add optional command to specify output conversion.																												[]
-Add command-line functionality (e.g, "convert 5km" should act on the 5km).																						[]
-
-Lists of units (don't forget OOM, micro, milli, kilo, mega etc.);
-
-Distance;
-Planc Length, Inch, Foot, Yard, Metre, Mile, Astronomical Unit, Parsec, Lightyear, 
-
-Mass;
-Atomic Mass Unit, Ounce, Pound, Kilogram, Solar Mass, 
-
-Temperature;
-Kelvin, Celsius, Farenheit,
-
-Time;
-Planc Time, Second, Minute, Hour, Day, Week, Year (365 days, simplified),
 
 -------------------------------------------------------------------------------
 
@@ -61,9 +25,13 @@ Notes;
 USE MATRICES to store the coefficients, i.e
 
 / m i f K
+
 m 1 x x x
+
 i x 1 x x
+
 f x x 1 x
+
 K x x x 1
 
 Read like "rows per column"
@@ -90,16 +58,18 @@ Thus, to convert QUANTITY to feet, all we need to do is this;
 
 		QUANTITY *= coEfficients[QUANTITY.type][T]
 
-Thoughts: This matrix should probably be defined within a member function of
-	some 'Quantity' class, with access to the discussed enum. This way, the
-	*only* way to convert a value from one type to another is to pass a
-	reference to that value and the desired type to that function, which can
-	then check for invalid types/indices and such. Lets call this the
-	'converter' function.
+Thoughts/Notes:
 
-	The converter function should probably be defined separately for each
-	Dimension, so that attempting to change a unit from one dimension
-	to another should throw an error (at you, the dev, not the user).
+This matrix should probably be defined within a member function of
+some 'Quantity' class, with access to the discussed enum. This way, the
+*only* way to convert a value from one type to another is to pass a
+reference to that value and the desired type to that function, which can
+then check for invalid types/indices and such. Lets call this the
+'converter' function.
+
+The converter function should probably be defined separately for each
+Dimension, so that attempting to change a unit from one dimension
+to another should throw an error (at you, the dev, not the user).
 
 ---------------------------------------------------------------------
 
