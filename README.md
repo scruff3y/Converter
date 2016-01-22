@@ -3,6 +3,9 @@ Displays a quantity in a variety of alternate units.
 
 So far; converts between kg, stone, pounds and ounces.
 
+In fact, it's really a bare-bones version that works, but will probably 
+be hell to expand from here on out...
+
 Below is copied from main.cpp header comment (removed a bit for brevity){
 
 Universal Converter, Version 0;
