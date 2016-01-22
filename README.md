@@ -1,7 +1,9 @@
 # Converter
 Displays a quantity in a variety of alternate units.
 
-Copied from main.cpp header comment{
+So far; converts between kg, stone, pounds and ounces.
+
+Below is copied from main.cpp header comment (removed a bit for brevity){
 
 Universal Converter, Version 0;
 By: scruff3y, December 2015
@@ -72,13 +74,15 @@ to another should throw an error (at you, the dev, not the user).
 Glossary:
 
 "Most Readable"
-	The value expressed with appropriate prefixes, i.e 250 Kilograms instead of 250,000 grams
+
+The value expressed with appropriate prefixes, i.e 250 Kilograms instead of 250,000 grams
 
 "Dimension"
-	The most basic types described here. These are MASSES, DISTANCES (or LENGTHS) and TIME.
 
-	All other units are derived from these basic dimensions, for example, energy = m*c^2, therefore
-	having dimensions : MASS*(DISTANCE^2)/(TIME^2).
+The most basic types described here. These are MASSES, DISTANCES (or LENGTHS) and TIME.
 
-	This means anything matching that description is a unit of energy; e.g grams * (inch/year)^2 is a valid
-	(though odd) unit of energy.
+All other units are derived from these basic dimensions, for example, energy = m*c^2, therefore
+having dimensions : MASS*(DISTANCE^2)/(TIME^2).
+
+This means anything matching that description is a unit of energy; e.g grams * (inch/year)^2 is a valid
+(though odd) unit of energy.
