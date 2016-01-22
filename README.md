@@ -24,15 +24,11 @@ unit of the
 Notes;
 USE MATRICES to store the coefficients, i.e
 
-/ m i f K
-
-m 1 x x x
-
-i x 1 x x
-
-f x x 1 x
-
-K x x x 1
+    / m i f K
+    m 1 x x x
+    i x 1 x x
+    f x x 1 x
+    K x x x 1
 
 Read like "rows per column"
 If you use an enum to specify dimension, and set the matrix up correctly, you
