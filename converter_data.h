@@ -27,6 +27,7 @@ namespace convert {
 
 	/*
 	Displays the input quantity as a variety of other quantities.
+	NOTE: It does NOT sanitize input; invalid unit specifiers will (probably) result in a crash!
 	*/
 	void parseAndConvert(std::string);
 
