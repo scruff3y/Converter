@@ -1,11 +1,9 @@
 # Converter
 Displays a quantity in a variety of alternate units.
 
-Currently works both as a console application and also from the command line directly.
+Currently a command-line application.
 
     convert [quantity][unit]
-
-Without brackets. Or with brackets. You call this thing how you want to, I ain't your boss. 
 
 For example;
 
@@ -47,7 +45,5 @@ etc...
 ----
 
 I'm using VS2015, and honestly I'm not sure how it's set up so if you can't get it to compile then it's Microsoft's fault...
-
-Written in C++ (if that wasn't already obvious).
 
 Antony (scruff3y) 2016.
